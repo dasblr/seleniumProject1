@@ -1,0 +1,20 @@
+<configuration>
+
+    <!-- Define the log file appender -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/selenium_log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Set the file name pattern with current date and time -->
+            <fileNamePattern>logs/project_log_%d{yyyy-MM-dd_HH-mm-ss}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Set the root logger level and add the FILE appender -->
+    <root level="INFO">
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>
